@@ -3,10 +3,6 @@
 #include <locale.h>
 #include <stdlib.h>
 
-/* Exemplo de linha para o arquivo texto
-Nobreza é ...?;Viver pelo próximo.;Sobreviver a qualquer custo.;Lutar bravamente pelo que você acredita.;Trazer ordem.;2;4;1;3;
-*/
-
 void inicializarDados(int vet[][4], int tam) {
     int i;
     for(i=0; i<tam; i++) {
@@ -77,6 +73,38 @@ void imprimirTudo(char matpergs[][100], char matresp1[][100], char matresp2[][10
 }
 
 int main() {
+    
+    // Inicio do projeto REC_ABERTURA
+    char nome[30];
+    int numnome;
+    
+    // ASCIIART de abertura
+    printf("_  _ __ |  |   _____ __   __   __      __  _ ___|| __  ____  ___ \n");
+    printf("\\  \\/ // _ \\|  |  /  _ \\_   // _ \\ /  _/ / _ \\   / _\\|  |  \\  _ \\  |/  _ \\/  _/  _ \\/  __/ \n");
+    printf(" \\   /\\  _/|  |(  <> )    /\\  _/ \\__ \\  \\  _/   \\  \\_|  |  /|  | \\/  (  <> )_ (  <> )__ \\  \n");
+    printf("  \\_/  \\__  >_/\\__/__ \\_  >_  >   \\__  >   \\_  >_/ |_|  ||\\_/__  >_/_  > \n");
+    printf("\n");  
+    
+    printf(" Bem vindo(a) ao Velozes e Curiosos \n Um quiz que vai te mostrar qual personagem da saga velozes e furiosos mais se parece com você. \n\n O quiz funciona da seguinte forma:\n Vão ser apresentadas algumas perguntas com 4 opções de resposta, cada resposta direciona a um personagem. \n Ao final, será mostrado com qual personagem você teve mais respostas relacionadas. \n");
+    
+    // REC_NOME
+    printf("\n Para começar, insira o nome/apelido que deseja ser chamado:\n");
+    scanf("%[^\n]s", nome);
+    
+    numnome= strlen(nome);
+
+    if (numnome <= 2 || numnome > 30) {
+        if (numnome<=2 ) {
+        printf(" Quantidade insuficiente de caracteres, insira um nome/apelido com mais de 2 caracteres.");
+        }
+        else {
+        printf(" Muitos caracteres, insira um nome/apelido com menos de 30 caracteres.");
+        }
+    }
+    else {
+    printf(" Nome salvo com sucesso, tenha um bom jogo %s", nome);
+    }
+    
     int tam=20;
     setlocale(LC_ALL, "Portuguese");
 
@@ -93,6 +121,6 @@ int main() {
     imprimirTudo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
     
-
     return 0;
 }
+    
