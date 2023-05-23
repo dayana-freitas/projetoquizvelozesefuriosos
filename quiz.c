@@ -92,5 +92,7 @@ int main() {
     /*Esta função pode ser usada por vocês somente para conferir se a leitura dos dados deu certo.*/
     imprimirTudo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
+    
+
     return 0;
 }
