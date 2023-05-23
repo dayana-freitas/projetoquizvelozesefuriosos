@@ -102,7 +102,23 @@ int main() {
         }
     }
     else {
-    printf(" Nome salvo com sucesso, tenha um bom jogo %s", nome);
+        printf(" Tenha um bom jogo %s \n\n", nome);
+    }
+
+    //REC_FILTROS
+    int modojogo;
+
+    printf("%s para começar a jogar, escolha um modo de jogo:\n\n Digite 0 Para o modo de jogo rápido (3 questões)\n Digite 1 para o modo de jogo completo (10 questões)\n", nome);
+    scanf("%d", &modojogo);
+
+    if (modojogo == 0) {
+        printf("OK você escolheu o modo de jogo rápido e terá que responder a 3 questões!");
+    }
+    else if (modojogo == 1) {
+        printf("OK você escolheu o modo de jogo completo e terá que responder a 10 questões!");
+    }
+    else {
+        printf("Você não escolheu um modo de jogo válido, por favor digite 0 ou 1");
     }
     
     int tam=20;
@@ -118,9 +134,7 @@ int main() {
     carregarDadosArquivo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
     /*Esta função pode ser usada por vocês somente para conferir se a leitura dos dados deu certo.*/
-    imprimirTudo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
+    //imprimirTudo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
-    
     return 0;
 }
-    
