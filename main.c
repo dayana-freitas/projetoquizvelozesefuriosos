@@ -333,6 +333,7 @@ int main () {
 }
 
 // Fim do gerador de números aleatórios
+// teste
     
     int tam=20;
     setlocale(LC_ALL, "Portuguese");
