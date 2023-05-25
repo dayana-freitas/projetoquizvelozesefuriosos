@@ -103,8 +103,6 @@ int main() {
         printf("\nTenha um bom jogo %s!\n\n", nome);
     }
 
-    system("pause");
-    system("cls");
     //REC_FILTROS
     int modojogo;
 
@@ -138,5 +136,4 @@ int main() {
     imprimirTudo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
     return 0;
-    system("pause");
 }
