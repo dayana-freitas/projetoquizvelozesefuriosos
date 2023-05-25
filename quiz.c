@@ -73,7 +73,7 @@ void imprimirTudo(char matpergs[][100], char matresp1[][100], char matresp2[][10
 }
 
 int main() {
-    // Define a língua na qual serão apresentados os caracteres especiais
+    // Define a lÃ­ngua na qual serÃ£o apresentados os caracteres especiais
     setlocale(LC_ALL, "Portuguese");
 
     // INICIO DO PROJETO
@@ -83,10 +83,10 @@ int main() {
 
     char nome[30];
     int numnome;
-    printf("Bem vindo(a) ao Velozes e Curiosos \nUm quiz que vai te mostrar qual personagem da saga velozes e furiosos mais se parece com você. \n\nO quiz funciona da seguinte forma:\nVãoo ser apresentadas algumas perguntas com 4 opções de resposta, cada resposta direciona a um personagem. \nAo final, será mostrado com qual personagem você teve mais respostas relacionadas. \n\n");
+    printf("Bem vindo(a) ao Velozes e Curiosos \nUm quiz que vai te mostrar qual personagem da saga velozes e furiosos mais se parece com vocÃª. \n\nO quiz funciona da seguinte forma:\nVÃ£oo ser apresentadas algumas perguntas com 4 opÃ§Ãµes de resposta, cada resposta direciona a um personagem. \nAo final, serÃ¡ mostrado com qual personagem vocÃª teve mais respostas relacionadas. \n\n");
 
     // REC_NOME
-    printf("\nPara começar, insira o nome/apelido que deseja ser chamado:\n\n");
+    printf("\nPara comeÃ§ar, insira o nome/apelido que deseja ser chamado:\n\n");
     scanf("%[^\n]s", nome);
 
     numnome= strlen(nome);
@@ -108,17 +108,17 @@ int main() {
     //REC_FILTROS
     int modojogo;
 
-    printf("\n%s para começar a jogar, escolha um modo de jogo:\n\nDigite 0 Para o modo de jogo rápido (3 questôes)\nDigite 1 para o modo de jogo completo (10 questões)\n\n", nome);
+    printf("\n%s para comeÃ§ar a jogar, escolha um modo de jogo:\n\nDigite 0 Para o modo de jogo rÃ¡pido (3 questÃ´es)\nDigite 1 para o modo de jogo completo (10 questÃµes)\n\n", nome);
     scanf("%d", &modojogo);
 
     if (modojogo == 0) {
-        printf("\nOK você escolheu o modo de jogo rápido e terá que responder a 3 questões!\n\n");
+        printf("\nOK vocÃª escolheu o modo de jogo rÃ¡pido e terÃ¡ que responder a 3 questÃµes!\n\n");
     }
     else if (modojogo == 1) {
-        printf("\nOK você escolheu o modo de jogo completo e terá que responder a 10 questões!\n\n");
+        printf("\nOK vocÃª escolheu o modo de jogo completo e terÃ¡ que responder a 10 questÃµes!\n\n");
     }
     else {
-        printf("\nVocê não escolheu um modo de jogo válido, por favor digite 0 ou 1\n\n");
+        printf("\nVocÃª nÃ£o escolheu um modo de jogo vÃ¡lido, por favor digite 0 ou 1\n\n");
     }
 
     // FIM DO PROJETO
@@ -131,10 +131,10 @@ int main() {
 
     inicializarDados(matvalores,tam);
 
-    /*Esta função carrega os dados gravados no arquivo dados.txt e coloca as informações nos vetores.*/
+    /*Esta funÃ§Ã£o carrega os dados gravados no arquivo dados.txt e coloca as informaÃ§Ãµes nos vetores.*/
     carregarDadosArquivo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
-    /*Esta função pode ser usada por vocês somente para conferir se a leitura dos dados deu certo.*/
+    /*Esta funÃ§Ã£o pode ser usada por vocÃªs somente para conferir se a leitura dos dados deu certo.*/
     imprimirTudo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
     return 0;
