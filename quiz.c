@@ -2,6 +2,7 @@
 #include <string.h>
 #include <locale.h>
 #include <stdlib.h>
+#include <time.h>
 
 // Carregar perguntas de dados.txt
 void inicializarDados(int vet[][4], int tam) {
@@ -92,7 +93,7 @@ void imprimirPergunta(char matpergs[][100], char matresp1[][100], char matresp2[
 void imprimirPerguntaEspecifica(char matpergs[][100], char matresp1[][100], char matresp2[][100], char matresp3[][100], char matresp4[][100], int indicepergunta) {
 
     int i = indicepergunta;
-    printf("\n\nPergunta %d: %s", i+1, matpergs[i]);
+    printf("\n\nPergunta: %s", matpergs[i]);
     printf("\n\ta - %s", matresp1[i]);
     printf("\n\tb - %s", matresp2[i]);
     printf("\n\tc - %s", matresp3[i]);
@@ -101,12 +102,12 @@ void imprimirPerguntaEspecifica(char matpergs[][100], char matresp1[][100], char
 
 
 // Gerador de números aleatórios
-
 int randomInteger (int low, int high) {
     int k;
     double d;
+    srand(time(NULL));
 
-    d = (double) rand () / ((double) RAND_MAX + 1);
+    d = (double) rand() / ((double) RAND_MAX + 1);
     k = d * (high - low + 1);
 
     return low + k;
@@ -199,11 +200,11 @@ int main() {
         printf("Digite 0 ou 1: ");
         scanf("%d", &modojogo);
         if (modojogo == 0) {
-            printf("\n OK você escolheu o modo de jogo rápido e terá que responder a 3 questões!\n\n");
+            printf("\n OK você escolheu o modo de jogo rápido e terá que responder a 3 questões!\n");
             numquestoes = 3;
         }
         else if (modojogo == 1) {
-            printf("\n OK você escolheu o modo de jogo completo e terá que responder a 10 questões!\n\n");
+            printf("\n OK você escolheu o modo de jogo completo e terá que responder a 10 questões!\n");
         numquestoes = 10;
         }
         else {
@@ -213,17 +214,10 @@ int main() {
 
     // REC_ALEATORIO
 
-    int at = numquestoes;
-
-        if (at > 0 && at <= 20) {
-          int vet[at];
-          generate(vet, at);
-          printvet(vet, at);
-        }
-
+    int at = numquestoes, vet[at];
+    generate(vet, at);
     for (int i = 1; i <= numquestoes; i++) {
-        imprimirPerguntaEspecifica(matpergs, matresp1, matresp2, matresp3, matresp4, i);
-        printf("%d", i);
+    imprimirPerguntaEspecifica(matpergs, matresp1, matresp2, matresp3, matresp4, vet[i-1]);
     }
 
     // FIM DO PROJETO
