@@ -1,0 +1,71 @@
+/* 
+
+********************************************** Projeto Quiz ****************************************************
+
+// Variáveis:
+
+char nome;
+int modojogo, numquestoes;
+
+// Função para imprimir perguntas
+void imprimirPergunta(char matpergs[][100], char matresp1[][100], char matresp2[][100], char matresp3[][100], char matresp4[][100], int tam) {
+    int i; //int i,j;
+    for(i=0; i<tam; i++) {
+        if (matvalores[i][0] < 0) break;
+        printf("\n\nPergunta %d: %s", i+1, matpergs[i]);
+        printf("\n\ta - %s", matresp1[i]);
+        printf("\n\tb - %s", matresp2[i]);
+        printf("\n\tc - %s", matresp3[i]);
+        printf("\n\td - %s", matresp4[i]);
+    }
+}
+
+// Estrutura do main:
+
+// REC_ABERTURA
+
+setlocale(LC_ALL, "Portuguese");
+printf("Introdução");
+
+---- carregar perguntas de dados.txt ----
+
+// REC_NOME Enquanto o nome não for válido, o algoritmo não continua rodando
+do {
+    int n = 0;
+    printf("pergunta nome");
+    scanf("%[^\n]s", nome);
+
+    if (strlen(nome) <= 2 || strlen(nome) > 30) {
+        n = 1;
+        printf("...");
+    }
+    else {
+        printf("...");
+    }
+} while (n == 1);
+
+REC_FILTROS Enquanto o modo de jogo não for válido, o algoritmo não continua rodando
+
+    do {
+        printf("Pergunta");
+        scanf("%d", &modojogo);
+        if (modojogo == 0) {
+            printf("...");
+            numquestoes = 3;
+        }
+        else if (modojogo == 1) {
+            printf("...");
+            numquestoes = 10;
+        }
+        else {
+            printf("...");
+        }
+    } while (modojogo != 0 || modojogo != 1);
+
+// REC_ALEATORIO
+
+
+// Variável at vem do gerador de números aleatórios
+int at = numquestoes
+
+*/ 
