@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Carregar perguntas de dados.txt
 void inicializarDados(int vet[][4], int tam) {
     int i;
     for(i=0; i<tam; i++) {
@@ -52,9 +51,7 @@ void carregarDadosArquivo(char matpergs[][100], char matresp1[][100], char matre
             case 8: /*val4*/
                     matvalores[linha][3] = atoi(token);
                     break;
-
             }
-
             token = strtok(NULL, ";");
             parte++;
         }
@@ -93,13 +90,12 @@ void imprimirPergunta(char matpergs[][100], char matresp1[][100], char matresp2[
 void imprimirPerguntaEspecifica(char matpergs[][100], char matresp1[][100], char matresp2[][100], char matresp3[][100], char matresp4[][100], int indicepergunta) {
 
     int i = indicepergunta;
-    printf("\n\nPergunta: %s", matpergs[i]);
-    printf("\n\ta - %s", matresp1[i]);
-    printf("\n\tb - %s", matresp2[i]);
-    printf("\n\tc - %s", matresp3[i]);
-    printf("\n\td - %s", matresp4[i]);
+    printf("\n\n Pergunta: %s", matpergs[i]);
+    printf("\n\t1 - %s", matresp1[i]);
+    printf("\n\t2 - %s", matresp2[i]);
+    printf("\n\t3 - %s", matresp3[i]);
+    printf("\n\t4 - %s", matresp4[i]);
 }
-
 
 // Gerador de números aleatórios
 int randomInteger (int low, int high) {
@@ -147,8 +143,6 @@ int main() {
     // Define a língua na qual serão apresentados os caracteres especiais
     setlocale(LC_ALL, "Portuguese");
 
-    // INICIO DO PROJETO
-
     // REC_ABERTURA
 
     int tam=20;
@@ -162,7 +156,11 @@ int main() {
     /*Esta função carrega os dados gravados no arquivo dados.txt e coloca as informações nos vetores.*/
     carregarDadosArquivo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
-    // ASCIIART de abertura COLOCAR AQUI!!!
+    printf("\n\n\n ___  __ ____ |  |   ____________ ____   ______   ____      ____  __ _________|__| ____  __________  ______ \n");
+    printf(" \\  \\/ // __ \\|  |  /  _ \\___   // __ \\ /  ___/ _/ __ \\   _/ ___\\|  |  \\_  __ \\  |/  _ \\/  ___/  _ \\/  ___/ \n");
+    printf("  \\   /\\  ___/|  |_(  <_> )    /\\  ___/ \\___ \\  \\  ___/   \\  \\___|  |  /|  | \\/  (  <_> )___ (  <_> )___ \\  \n");
+    printf("   \\_/  \\___  >____/\\____/_____ \\___  >____  >   \\___  >   \\___  >____/ |__|  |__|\\____/____  >____/____  > \n");
+    printf("\n"); 
 
     printf(" Bem vindo(a) ao Velozes e Curiosos \n Um quiz que vai te mostrar qual personagem da saga velozes e furiosos mais se parece com você. \n\n O quiz funciona da seguinte forma:\n\n Vão ser apresentadas algumas perguntas com 4 opções de resposta, cada resposta direciona a um personagem. \n Ao final, será mostrado com qual personagem você teve mais respostas relacionadas. \n\n");
 
@@ -185,13 +183,11 @@ int main() {
             }
         }
         else {
-            //printf("\n Tenha um bom jogo %s!\n\n", nome);
             n = 0;
         }
     } while (n == 1);
 
     //REC_FILTROS
-
     int modojogo, numquestoes;
 
     printf("\n %s para começar a jogar, escolha um modo de jogo:\n\n 0 - modo de jogo rápido (3 questões)\n 1 - modo de jogo completo (10 questões)\n\n ", nome);
@@ -213,18 +209,33 @@ int main() {
     } while (modojogo != 0 && modojogo != 1);
 
     // REC_ALEATORIO
-
-    int at = numquestoes, vet[at];
+    int at = numquestoes, vet[at], resposta;
     generate(vet, at);
+
     for (int i = 1; i <= numquestoes; i++) {
-    imprimirPerguntaEspecifica(matpergs, matresp1, matresp2, matresp3, matresp4, vet[i-1]);
+        imprimirPerguntaEspecifica(matpergs, matresp1, matresp2, matresp3, matresp4, vet[i-1]);
+        printf("\n\n Digite sua resposta: ");
+
+        do {
+            setbuf(stdin, NULL);
+            scanf("%d", &resposta);
+            
+            switch (resposta) {
+                case 1: printf("\n\t1 - %s", matresp1[i-1]);
+                break;
+                case 2: printf("\n\t2 - %s", matresp2[i-1]);
+                break;
+                case 3: printf("\n\t3 - %s", matresp3[i-1]);
+                break;
+                case 4: printf("\n\t4 - %s", matresp4[i-1]);
+                break;
+                default: printf(" Resposta inválida, digite sua resposta novamente:");
+            }
+        } while (resposta > 4 || resposta < 1);       
     }
 
-    // FIM DO PROJETO
-
     /*Esta função pode ser usada por vocês somente para conferir se a leitura dos dados deu certo.*/
-    //imprimirTudo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
+    imprimirTudo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
     //imprimirPergunta(matpergs, matresp1, matresp2, matresp3, matresp4, tam);
-
     return 0;
 }
