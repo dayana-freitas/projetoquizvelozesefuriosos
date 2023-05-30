@@ -1,0 +1,20 @@
+O que é mais importante para você?;Dinheiro;Família;Justiça;Amor;1;2;3;4;
+Qual cor mais combina com você?;Azul;Laranja;Roxo;Preto;3;4;1;2;
+Escolha uma habilidade:;Resiliência;Força bruta;Persuasão;Inteligência;4;2;1;3;
+Quem é você em um local com muitas pessoas?;O resenha;O famosinho;O padrão;O quieto;1;2;3;4;
+Escolha uma comida:;Carne assada;Salgadinho;Hambúrguer;Pão com atum;2;4;1;3;
+Escolha um lugar para viajar:;Dubai;Japão;EUA;Inglaterra;1;4;2;3;
+Quem seria você em uma corrida?;O que sempre ganha.;O que vai apenas para participar.;O que tentaria trapacear.;O que se esforça para vencer.;2;4;1;3;
+Quem seria você em uma briga?;O habilidoso;O forte;O que só fica olhando;O que ajuda mas não é bom;3;2;4;1;
+Qual carro você escolheria?;O mais potente;O que faz curvas melhores;O mais chamativo;O mais divertido;2;3;4;1;
+Escolha um emprego:;Mecânico;Policial;Mafioso;Desempregado;2;3;4;1;
+Qual modelo de carro mais te atraí?;Dodge Charger;Mazda;RX-7 Nissan Skyline;CCXR;2;4;3;1
+Que frase mais lhe define?;Eu não tenho amigos, tenho família;Dizem que não morremos quando permanecemos na memória de quem amamos;A vida é simples. Você toma decisões e não olha para trás;Conhece o acento ejetável? É o botãozinho do capeta;2;3;4;1
+Do que você mais gosta?;Ganhar rachas;Perseguir carros;Se disfarçar;Fazer drift;2;3;1;4
+Como você iria pra uma festa?;Confortável;Elegante;Estiloso;De qualquer jeito;4;3;2;1
+Escolha um defeito que te represente:;Cabeça quente;Desajeitado;Exibido;Inconsequente;2;1;3;4
+Como você executa uma tarefa difícil?;Da forma mais direta;Da forma mais eficiente;Executa como dá;Executa até conseguir;2;3;1;4
+Em uma missão você seria:;O que monta a estratégia;O que se disfarça;O que lidera;O que executa sem questionar;3;1;2;4
+Qual seu filme favorito de velozes e furiosos?;Velozes e furiosos 1;Velozes e furiosos 2;Velozes e furiosos 3: Desafio em Tóquio;Velozes e furiosos 5: Operação Rio;2;3;4;1;
+Escolha uma frase:;Tô cheio de fome;Velocidade é isso, sentir-se livre;Quem você escolhe pra perto de você, revela seu caráter;Pensou que poderia ir sem se despedir?;1;2;4;3;
+Por qual crime você seria preso?;Ajudar um bandido;Bater em uma pessoa;Roubar carros;Fazer manobras perigosas na rua;3;2;1;4;
