@@ -186,7 +186,7 @@ int main() {
 				numquestoes = 10;
 			}
 			else {
-				printf("\n  Você não escolheu um modo de jogo válido.\n\t0 - jogo rápido (3 questões)\n\t1 - jogo completo (10 questões)\n\n");
+				printf("\n  Você não escolheu um modo de jogo válido.\n\n\t0 - jogo rápido (3 questões)\n\t1 - jogo completo (10 questões)\n\n");
 			}
 		} while (modojogo != 0 && modojogo != 1);
 
@@ -247,59 +247,58 @@ int main() {
 		// Apenas um personagem como resposta
 		printf("\n\n  ---------------------------------------------------------------------------------------------------------------------------------------");
 		if (roman > toretto && roman > brian && roman > han) {
-			printf("\n\n\tUAU! O personagem do filme com o qual você mais se parece é o Roman!\n");
+			printf("\n\n\tUAU %s! O personagem do filme com o qual você mais se parece é o Roman!\n", nome);
 		}
 		else if (toretto > brian && toretto > han && toretto> roman) {
-			printf("\n\n\tUAU! O personagem do filme com o qual você mais se parece é o Toretto!\n");
+			printf("\n\n\tUAU %s! O personagem do filme com o qual você mais se parece é o Toretto!\n", nome);
 		} 
 		else if (brian > toretto && brian > roman && brian > han) {
-			printf("\n\n\tUAU! O personagem do filme com o qual você mais se parece é o Brian!\n");
+			printf("\n\n\tUAU %s! O personagem do filme com o qual você mais se parece é o Brian!\n", nome);
 		}
 		else if (han > toretto && han > roman && han > brian) {
-			printf("\n\n\tUAU! O personagem do filme com o qual você mais se parece é o Han!\n");
+			printf("\n\n\tUAU %s! O personagem do filme com o qual você mais se parece é o Han!\n", nome);
 		}
 
 		// Dois personagens como resposta 
 		else if (roman == toretto && roman > brian && roman > han) {
-			printf("\n\n\tQue legal, você se tem caracteristicas em comum com dois personagens do filme: Roman e Toretto\n");
+			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Roman e Toretto\n", nome);
 		}
 		else if (roman == brian && roman > toretto && roman > han) {
-			printf("\n\n\tQue legal, você se tem caracteristicas em comum com dois personagens do filme: Roman e Brian\n");
+			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Roman e Brian\n", nome);
 		}
 		else if (roman == han && roman > toretto && roman > brian) {
-			printf("\n\n\tQue legal, você se tem caracteristicas em comum com dois personagens do filme: Roman e Han\n");
+			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Roman e Han\n", nome);
 		}
 		else if (toretto == han && toretto > roman && toretto > brian) {
-			printf("\n\n\tQue legal, você se tem caracteristicas em comum com dois personagens do filme: Toretto e Han\n");
+			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Toretto e Han\n", nome);
 		}
 		else if (toretto == brian && toretto > roman && toretto > han) {
-			printf("\n\n\tQue legal, você se tem caracteristicas em comum com dois personagens do filme: Toretto e Brian\n");
+			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Toretto e Brian\n", nome);
 		}
 		else if (han == brian && han > roman && han > toretto) {
-			printf("\n\n\tQue legal, você se tem caracteristicas em comum com dois personagens do filme: Han e Brian\n");
+			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Han e Brian\n", nome);
 		}
 
 		// Três personagens como resposta
 		else if (roman == toretto && roman == brian && roman != han) {
-			printf("\n\n\tOlhá só, você se parece com o Roman, o Toretto e o Brian!!!\n");
+			printf("\n\n\tOlhá só %s, você se parece com o Roman, o Toretto e o Brian!!!\n", nome);
 		}
 		else if (roman == toretto && roman == han && roman != brian) {
-			printf("\n\n\tOlhá só, você se parece com o Han, o Roman e o Toretto!!!\n");
+			printf("\n\n\tOlhá só %s, você se parece com o Han, o Roman e o Toretto!!!\n", nome);
 		}
 		else if (roman == brian && roman == han && roman != toretto) {
-			printf("\n\n\tOlhá só, você se parece com o Brian, o Han e Roman!!!\n");
+			printf("\n\n\tOlhá só %s, você se parece com o Brian, o Han e o Roman!!!\n", nome);
 		}
 		else if (toretto == brian && toretto == han && roman != toretto) {
-			printf("\n\n\tOlhá só, você se parece com o Toretto, o Brian e Han!!!\n");
+			printf("\n\n\tOlhá só %s, você se parece com o Toretto, o Brian e o Han!!!\n", nome);
 		}
 		printf("\n  ---------------------------------------------------------------------------------------------------------------------------------------");
 		
 		// REC_SESS
 		printf("\n\n  %s deseja responder o quiz outra vez? Digite 1 para responder novamente ou qualquer outro número para sair do quiz: ", nome);
 		scanf("%d", &session);
-		if (session != 1)
-		{
-		printf("\n\n  Espero que tenha gostado do quiz! Até uma próxima, bye\n\n");
+		if (session != 1) {
+			printf("\n\n  Espero que tenha gostado do quiz! Até uma próxima, bye\n\n");
 		}
 		else clear();
 	} while (session == 1);
