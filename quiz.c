@@ -90,7 +90,6 @@ void imprimirPergunta(char matpergs[][100], char matresp1[][100], char matresp2[
 int randomInteger (int low, int high) {
 	int k;
 	double d;
-	srand(time(NULL));
 	d = (double) rand() / ((double) RAND_MAX + 1);
 	k = d * (high - low + 1);
 	return low + k;
@@ -107,6 +106,7 @@ return 0;
 
 int generate(int vet[], int tam) {
 	int i=0, tmp;
+	srand(time(NULL));
 	do {
 		tmp = randomInteger(0,19);
 		if (!repeated(vet, tmp, tam)) {
