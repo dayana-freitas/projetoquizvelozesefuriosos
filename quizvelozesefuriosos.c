@@ -33,7 +33,7 @@ void inicializarDados(int vet[][4], int tam) {
 }
 
 void carregarDadosArquivo(char matpergs[][100], char matresp1[][100], char matresp2[][100], char matresp3[][100], char matresp4[][100], int matvalores[][4], int tam) {
-	FILE *arq = fopen("dados.txt", "r");
+	FILE *arq = fopen("dadosiso.txt", "r");
 	int linha=0, parte;
 	char frase[1000];
 
