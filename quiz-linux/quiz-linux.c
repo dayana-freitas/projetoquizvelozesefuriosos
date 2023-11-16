@@ -4,14 +4,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Função para identificar o sistema operacional e incluir a biblioteca
+// FunÃ§Ã£o para identificar o sistema operacional e incluir a biblioteca
 #ifdef __linux__
 	#include <unistd.h>
 #elif _WIN32
 	#include <windows.h>
 #endif
 
-// Função clean conforme o sistema operacional
+// FunÃ§Ã£o clean conforme o sistema operacional
 void clear() {
 	#ifdef __linux__
 		system("clear");
@@ -33,7 +33,7 @@ void inicializarDados(int vet[][4], int tam) {
 }
 
 void carregarDadosArquivo(char matpergs[][100], char matresp1[][100], char matresp2[][100], char matresp3[][100], char matresp4[][100], int matvalores[][4], int tam) {
-	FILE *arq = fopen("dadosiso.txt", "r");
+	FILE *arq = fopen("dados-linux.txt", "r");
 	int linha=0, parte;
 	char frase[1000];
 
@@ -77,7 +77,7 @@ void carregarDadosArquivo(char matpergs[][100], char matresp1[][100], char matre
 	};
 }
 
-// Função para imprimir uma pergunta
+// FunÃ§Ã£o para imprimir uma pergunta
 void imprimirPergunta(char matpergs[][100], char matresp1[][100], char matresp2[][100], char matresp3[][100], char matresp4[][100], int matvalores[][4], int i) {
 	printf("\n\n  Pergunta : %s \n", matpergs[i]);
 	printf("\n\t1 - %s", matresp1[i]);
@@ -86,7 +86,7 @@ void imprimirPergunta(char matpergs[][100], char matresp1[][100], char matresp2[
 	printf("\n\t4 - %s", matresp4[i]);
 }
 
-// Gerador de números aleatórios
+// Gerador de nÃºmeros aleatÃ³rios
 int randomInteger (int low, int high) {
 	int k;
 	double d;
@@ -117,7 +117,7 @@ int generate(int vet[], int tam) {
 }
 
 int main() {
-	// Define a língua na qual serão apresentados os caracteres especiais
+	// Define a lÃ­ngua na qual serÃ£o apresentados os caracteres especiais
 	setlocale(LC_ALL, "Portuguese");
 
 	// REC_ABERTURA
@@ -128,7 +128,7 @@ int main() {
 
 	inicializarDados(matvalores,tam);
 
-	/*Esta função carrega os dados gravados no arquivo dados.txt e coloca as informações nos vetores.*/
+	/*Esta funÃ§Ã£o carrega os dados gravados no arquivo dados.txt e coloca as informaÃ§Ãµes nos vetores.*/
 	carregarDadosArquivo(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, tam);
 
 	do {
@@ -141,12 +141,12 @@ int main() {
 	printf("\n\n"); 
 
 	printf("  Bem vindo(a) ao Velozes e Curiosos \n");
-	printf("  Um quiz que vai te mostrar com qual personagem da saga Velozes e Furiosos você mais se parece. \n\n");
+	printf("  Um quiz que vai te mostrar com qual personagem da saga Velozes e Furiosos vocÃª mais se parece. \n\n");
 	printf("  O quiz funciona da seguinte forma:\n\n");
-	printf("  Vão lhe ser apresentadas algumas perguntas com quatro opções de resposta.\n");
-	printf("  Você deverá digitar um número de 1 a 4, conforme a resposta com a qual mais se identifique. \n");
-	printf("  Ao final, será mostrado com qual ou quais dos personagens você mais se parece sendo eles:\n\n");
-	printf("\t- Toretto: O líder e personagem principal do filme\n");
+	printf("  VÃ£o lhe ser apresentadas algumas perguntas com quatro opÃ§Ãµes de resposta.\n");
+	printf("  VocÃª deverÃ¡ digitar um nÃºmero de 1 a 4, conforme a resposta com a qual mais se identifique. \n");
+	printf("  Ao final, serÃ¡ mostrado com qual ou quais dos personagens vocÃª mais se parece sendo eles:\n\n");
+	printf("\t- Toretto: O lÃ­der e personagem principal do filme\n");
 	printf("\t- Brian: O oficial que abandona o FBI para ajudar Toretto\n");
 	printf("\t- Roman: O parceiro de Brian \n");
 	printf("\t- Han: O personagem que \"morreu\" e \"reviveu\"\n");
@@ -154,7 +154,7 @@ int main() {
 		// REC_NOME e REC_CHECKS
 		int n;
 		char nome[30];
-		printf("\n  Mas antes de começar, insira seu nome: ");
+		printf("\n  Mas antes de comeÃ§ar, insira seu nome: ");
 		do {
 			n = 0;
 			setbuf(stdin, NULL);
@@ -173,20 +173,20 @@ int main() {
 
 		//REC_FILTROS
 		int modojogo, numquestoes;
-		printf("\n  %s antes de começar o quiz, escolha um modo de jogo:\n\n\t0 - jogo rápido (3 questões)\n\t1 - jogo completo (10 questões)\n\n", nome);	
+		printf("\n  %s antes de comeÃ§ar o quiz, escolha um modo de jogo:\n\n\t0 - jogo rÃ¡pido (3 questÃµes)\n\t1 - jogo completo (10 questÃµes)\n\n", nome);	
 		do {
 			printf("  Digite 0 ou 1: ");
 			scanf("%d", &modojogo);
 			if (modojogo == 0) {
-				printf("\n  OK você escolheu o modo de jogo rápido e terá que responder a 3 questões!\n  ");
+				printf("\n  OK vocÃª escolheu o modo de jogo rÃ¡pido e terÃ¡ que responder a 3 questÃµes!\n  ");
 				numquestoes = 3;
 			}
 			else if (modojogo == 1) {
-				printf("\n  OK você escolheu o modo de jogo completo e terá que responder a 10 questões!\n  ");
+				printf("\n  OK vocÃª escolheu o modo de jogo completo e terÃ¡ que responder a 10 questÃµes!\n  ");
 				numquestoes = 10;
 			}
 			else {
-				printf("\n  Você não escolheu um modo de jogo válido.\n\n\t0 - jogo rápido (3 questões)\n\t1 - jogo completo (10 questões)\n\n");
+				printf("\n  VocÃª nÃ£o escolheu um modo de jogo vÃ¡lido.\n\n\t0 - jogo rÃ¡pido (3 questÃµes)\n\t1 - jogo completo (10 questÃµes)\n\n");
 			}
 		} while (modojogo != 0 && modojogo != 1);
 
@@ -199,7 +199,7 @@ int main() {
 			imprimirPergunta(matpergs, matresp1, matresp2, matresp3, matresp4, matvalores, vet[i-1]);
 			printf("\n\n  Digite sua resposta: ");
 
-			// variavel que recebe o índice da pergunta para apresentar a resposta escolhida pelo usuário
+			// variavel que recebe o Ã­ndice da pergunta para apresentar a resposta escolhida pelo usuÃ¡rio
 			int alternativa = vet[i-1];
 			do {
 				setbuf(stdin, NULL);
@@ -221,11 +221,11 @@ int main() {
 						break;
 					default: 
 						personagem = 0;
-						printf(" \n  Resposta inválida, digite sua resposta novamente: ");
+						printf(" \n  Resposta invÃ¡lida, digite sua resposta novamente: ");
 				}
 
 				//REC_CALC
-				// Atribuir a pontuação para cada personagem conforme as respostas
+				// Atribuir a pontuaÃ§Ã£o para cada personagem conforme as respostas
 				switch (personagem) {
 					case 1: roman++;
 						break;
@@ -247,58 +247,58 @@ int main() {
 		// Apenas um personagem como resposta
 		printf("\n\n  ---------------------------------------------------------------------------------------------------------------------------------------");
 		if (roman > toretto && roman > brian && roman > han) {
-			printf("\n\n\tUAU %s! O personagem do filme com o qual você mais se parece é o Roman!\n", nome);
+			printf("\n\n\tUAU %s! O personagem do filme com o qual vocÃª mais se parece Ã© o Roman!\n", nome);
 		}
 		else if (toretto > brian && toretto > han && toretto> roman) {
-			printf("\n\n\tUAU %s! O personagem do filme com o qual você mais se parece é o Toretto!\n", nome);
+			printf("\n\n\tUAU %s! O personagem do filme com o qual vocÃª mais se parece Ã© o Toretto!\n", nome);
 		} 
 		else if (brian > toretto && brian > roman && brian > han) {
-			printf("\n\n\tUAU %s! O personagem do filme com o qual você mais se parece é o Brian!\n", nome);
+			printf("\n\n\tUAU %s! O personagem do filme com o qual vocÃª mais se parece Ã© o Brian!\n", nome);
 		}
 		else if (han > toretto && han > roman && han > brian) {
-			printf("\n\n\tUAU %s! O personagem do filme com o qual você mais se parece é o Han!\n", nome);
+			printf("\n\n\tUAU %s! O personagem do filme com o qual vocÃª mais se parece Ã© o Han!\n", nome);
 		}
 
 		// Dois personagens como resposta 
 		else if (roman == toretto && roman > brian && roman > han) {
-			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Roman e Toretto\n", nome);
+			printf("\n\n\tQue legal %s, vocÃª se tem caracteristicas em comum com dois personagens do filme: Roman e Toretto\n", nome);
 		}
 		else if (roman == brian && roman > toretto && roman > han) {
-			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Roman e Brian\n", nome);
+			printf("\n\n\tQue legal %s, vocÃª se tem caracteristicas em comum com dois personagens do filme: Roman e Brian\n", nome);
 		}
 		else if (roman == han && roman > toretto && roman > brian) {
-			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Roman e Han\n", nome);
+			printf("\n\n\tQue legal %s, vocÃª se tem caracteristicas em comum com dois personagens do filme: Roman e Han\n", nome);
 		}
 		else if (toretto == han && toretto > roman && toretto > brian) {
-			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Toretto e Han\n", nome);
+			printf("\n\n\tQue legal %s, vocÃª se tem caracteristicas em comum com dois personagens do filme: Toretto e Han\n", nome);
 		}
 		else if (toretto == brian && toretto > roman && toretto > han) {
-			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Toretto e Brian\n", nome);
+			printf("\n\n\tQue legal %s, vocÃª se tem caracteristicas em comum com dois personagens do filme: Toretto e Brian\n", nome);
 		}
 		else if (han == brian && han > roman && han > toretto) {
-			printf("\n\n\tQue legal %s, você se tem caracteristicas em comum com dois personagens do filme: Han e Brian\n", nome);
+			printf("\n\n\tQue legal %s, vocÃª se tem caracteristicas em comum com dois personagens do filme: Han e Brian\n", nome);
 		}
 
-		// Três personagens como resposta
+		// TrÃªs personagens como resposta
 		else if (roman == toretto && roman == brian && roman != han) {
-			printf("\n\n\tOlhá só %s, você se parece com o Roman, o Toretto e o Brian!!!\n", nome);
+			printf("\n\n\tOlhÃ¡ sÃ³ %s, vocÃª se parece com o Roman, o Toretto e o Brian!!!\n", nome);
 		}
 		else if (roman == toretto && roman == han && roman != brian) {
-			printf("\n\n\tOlhá só %s, você se parece com o Han, o Roman e o Toretto!!!\n", nome);
+			printf("\n\n\tOlhÃ¡ sÃ³ %s, vocÃª se parece com o Han, o Roman e o Toretto!!!\n", nome);
 		}
 		else if (roman == brian && roman == han && roman != toretto) {
-			printf("\n\n\tOlhá só %s, você se parece com o Brian, o Han e o Roman!!!\n", nome);
+			printf("\n\n\tOlhÃ¡ sÃ³ %s, vocÃª se parece com o Brian, o Han e o Roman!!!\n", nome);
 		}
 		else if (toretto == brian && toretto == han && roman != toretto) {
-			printf("\n\n\tOlhá só %s, você se parece com o Toretto, o Brian e o Han!!!\n", nome);
+			printf("\n\n\tOlhÃ¡ sÃ³ %s, vocÃª se parece com o Toretto, o Brian e o Han!!!\n", nome);
 		}
 		printf("\n  ---------------------------------------------------------------------------------------------------------------------------------------");
 		
 		// REC_SESS
-		printf("\n\n  %s deseja responder o quiz outra vez? Digite 1 para responder novamente ou qualquer outro número para sair do quiz: ", nome);
+		printf("\n\n  %s deseja responder o quiz outra vez? Digite 1 para responder novamente ou qualquer outro nÃºmero para sair do quiz: ", nome);
 		scanf("%d", &session);
 		if (session != 1) {
-			printf("\n\n  Espero que tenha gostado do quiz! Até uma próxima, bye\n\n");
+			printf("\n\n  Espero que tenha gostado do quiz! AtÃ© uma prÃ³xima, bye\n\n");
 		}
 		else clear();
 	} while (session == 1);
