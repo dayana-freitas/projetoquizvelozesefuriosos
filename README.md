@@ -23,8 +23,8 @@ Esse é um projeto desenvolvido para a matéria de computação, sendo codado ne
 <h3>Compilar no PC Windows com VSCode</h3>
 <p>Para rodar o código com os caracteres corretos no windows usando o Visual Studio Code é necessário trocar o encoding por ISO8859-1 tanto nos dados como no quiz e recolar os códigos disponíveis em base.txt com os caracteres corretos. Em seguida compilar normalmente utilizando o F6. O vídeo acima explica como fazer o encoding.</p>
 
-<h3>Rodar no Online GBD - Plataforma Online que simula o funcionamento no Linux</h3>
-<p>Carregar os arquivos quiz-linux e dados-linux no Online GBD e executa-los.</p>
+<h3>Rodar no Online GDB - Plataforma Online que simula o funcionamento no Linux</h3>
+<p>Carregar os arquivos quiz-linux e dados-linux no Online GDB e executa-los.</p>
 
 <h3>Rodar somente o executável no Windows</h3>
 <p>Para rodar somente o executável basta roda-lo numa pasta que contenha tanto o executável quanto o arquivo dados.txt juntos.</p>
